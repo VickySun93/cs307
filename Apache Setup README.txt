@@ -3,7 +3,7 @@ Last edited by Stephen Kercher, 3/2/15 at 8:36PM
 
 
 For our project, we have run into a few snags using the most updated version of Apache,
-so we have reverted a version that we know is stable.  This version is 2.2.17.  In order to get this on your
+so we have reverted to a version that we know is stable.  This version is 2.2.17.  In order to get this on your
 CS directory, follow the directions in this readme.
 
 1.SSH(Putty or Cyberduck or WinSCP or whatever) into data.cs.purdue.edu
