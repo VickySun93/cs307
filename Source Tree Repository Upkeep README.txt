@@ -1,3 +1,5 @@
+Last edited by Stephen Kercher, 3/2/15 at 9:01PM
+
 As I am sure most of you know, we are using SourceTree to keep all of our file updated
  and so we all have very updated versions of what each other is doing.
 
