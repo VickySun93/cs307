@@ -6,6 +6,8 @@ For our project, we have run into a few snags using the most updated version of 
 so we have reverted to a version that we know is stable.  This version is 2.2.17.  In order to get this on your
 CS directory, follow the directions in this readme.
 
+(If working in the CS linux(not windows) lab, ignore step 1)
+
 1.SSH(Putty or Cyberduck or WinSCP or whatever) into data.cs.purdue.edu
 and log in with your Purdue Career Account and Password.
 
