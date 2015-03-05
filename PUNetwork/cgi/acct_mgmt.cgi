@@ -1,18 +1,18 @@
 #!/usr/bin/python
 
 import cgi, string, sys, os, re, random
+from os.path import expanduser
 import cgitb; cgitb.enable()  # for troubleshooting
 import sqlite3
-import session
+#import session
 
 #Get Databasedir
-MYLOGIN="skercher"
-DATABASE="/homes/"+MYLOGIN+"/PictureShareDB/picture_share.db"
-IMAGEPATH="/homes/"+MYLOGIN+"/PictureShareDB/images"
+HOMEDIR= expanduser("~")
+DATABASE=HOMEDIR+"/PUNetwork/purdue_network.db"
 
 
 ############################################################
-def generate_password_form(user,session):
+def generate_password_form(form):#add session parameter
     html="""
 <HTML>
 <HEAD>
@@ -35,15 +35,15 @@ def generate_password_form(user,session):
 <INPUT TYPE=hidden NAME="action" VALUE="change">
 <INPUT TYPE=submit VALUE="Change Password">
 
-<a href="login.cgi?action=back&username={user}&session={session}">Back to Admin Options</a>
+<a href="login.cgi?action=back&username={user}">Back to Admin Options</a>
 </FORM>
 </BODY>
 </HTML>
-"""
+"""# add session to url above
     print_html_content_type()
-    print(html.format(user=user,session=session))
+    print(html.format(form["user"]=user))#add (session=session) to html.format parameter
 #############################################################
-def generate_delete_user_form(user, session):
+def generate_delete_user_form(user): #add session to parameter
     html="""
 <HTML>
 <HEAD>
@@ -65,13 +65,13 @@ def generate_delete_user_form(user, session):
 <INPUT TYPE=hidden NAME="action" VALUE="delete_user">
 <INPUT TYPE=submit VALUE="Delete Account">
 
-<a href="login.cgi?action=back&username={user}&session={session}">Back to Admin Options</a>
+<a href="login.cgi?action=back&username={user}">Back to Admin Options</a>
 </FORM>
 </BODY>
 </HTML>
-"""
+"""#add session to url variables
     print_html_content_type()
-    print(html.format(user=user,session=session))
+    print(html.format(user=user)) #add session to html.format
 #############################################################
 def print_html_content_type():
     # Required header that tells the browser how to render the HTML.
@@ -81,7 +81,7 @@ def print_html_content_type():
 def change_password(form):
     conn=sqlite3.connect(DATABASE)
     c=conn.cursor()
-    sessions=form["session"].value
+    #sessions=form["session"].value
     users=form["user"].value
     oldPass=form["oldPassword"].value
     newPass=form["newPassword"].value
@@ -90,10 +90,10 @@ def change_password(form):
     passw = c.fetchone()
     if (passw[0] == oldPass):
         if (newPass == newPassConf):
-            c.execute('UPDATE users SET password = ? WHERE email = ?', (newPass,users))
+            c.execute('UPDATE users SET password = ? WHERE user_name = ?', (newPass,users))
 
     else:
-        generate_password_form(users,sessions)
+        generate_password_form(users)#add sessions to parameters
         print("<H3><font color=\"red\">Passwords do not match</font></H3>")
             
 
@@ -105,14 +105,12 @@ def check_password(user, passwd):
     c = conn.cursor()
 
     t = (user,)
-    c.execute('SELECT * FROM users WHERE email=?', t)
+    c.execute('SELECT password FROM users WHERE user_name=?', t)
 
-    row = stored_password=c.fetchone()
+    stored_password=c.fetchone()
     conn.close();
 
-    if row != None: 
-        stored_password=row[1]
-    if (stored_password==passwd):
+    if (stored_password[0]==passwd):
         return "passed"
 
     return "failed"
@@ -120,27 +118,58 @@ def check_password(user, passwd):
 #def delete_user(form):
 
 ######################################################
-def check_sessions(form):
-    return session.check_session(form)
+#def check_sessions(form):
+    #return session.check_session(form)
+########################################################
+def generate_acct_mgmt_form(form):#add session to this?
+    html="""
+<HTML>
+<HEAD>
+<TITLE>PUNetwork</TITLE>
+</HEAD>
+
+<BODY BGCOLOR = white>
+
+<center><H2>PUNetwork Account Management Page</H2></center>
+
+<H3>Account Options</H3>
+
+<TABLE BORDER = 0>
+<FORM METHOD=post ACTION="acct_mang.cgi">
+<TR><TH>Type Password:</TH><TD><INPUT TYPE=password NAME="changePassword"></TD></TR>
+<TR><TH>Confirm Password:</TH><TD><INPUT TYPE=password NAME="changePasswordConfirm"></TD></TR>
+</TABLE>
+
+<INPUT TYPE=hidden NAME="action" VALUE="delete_user">
+<INPUT TYPE=submit VALUE="Delete Account">
+
+<a href="login.cgi?action=back&username={user}">Back to Admin Options</a>
+</FORM>
+</BODY>
+</HTML>
+"""#add session to url variables
+    print_html_content_type()
+    print(html.format(user=user)) #add session to html.format
 ##########################################################
 def main():
     mangform=cgi.FieldStorage()
-    isTrue=check_sessions(mangform)
+    generate_acct_mgmt_form(mangform)
+    isTrue= "passed" #check_sessions(mangform)
     if isTrue == "passed":
         usera=mangform["user"].value
-        sessiona=mangform["session"].value
+#       sessiona=mangform["session"].value
         if "action" in mangform:
             action=mangform["action"].value
             if action == "delete_account":
-                generate_delete_user_form(usera,sessiona)
+                generate_delete_user_form(usera)#add sessiona to parameter
             elif action == "change_password":
-                generate_password_form(usera,sessiona)
+                generate_password_form(usera)#add sessiona to parameter
             elif action == "change":
                 change_password(mangform)
 #            elif action == "delete_user":
 #                delete_user(mangform)
         else:
-            generate_password_form(usera,sessiona)
+            generate_password_form(usera)#add sessiona to parameters
     else:
         goBack="""
 <center><H1>Please Log in to use this Feature</H1></center>

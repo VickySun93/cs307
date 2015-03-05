@@ -1,7 +1,12 @@
 #!/usr/bin/python
 
 import sqlite3, os
-os.remove("purdue_network.db")
+
+try:
+	os.remove("purdue_network.db")
+except FileNotFoundError:
+	tmp = open("purdue_network.db", "w")
+	tmp.close()
 conn = sqlite3.connect('purdue_network.db')
 
 c = conn.cursor()
@@ -14,6 +19,7 @@ c.execute("PRAGMA foreign_keys = ON")
 c.execute('''CREATE TABLE users
 	     (name TEXT NOT NULL,
 	      user_name TEXT NOT NULL,
+	      user_id INTEGER NOT NULL,
 	      password TEXT NOT NULL,
 	      email TEXT NOT NULL,
 	      class_list TEXT NOT NULL,
