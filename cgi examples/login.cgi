@@ -7,9 +7,8 @@ import sqlite3
 import session
 
 #Get Databasedir
-MYLOGIN="skercher"
-DATABASE="/homes/"+MYLOGIN+"/PictureShareDB/picture_share.db"
-IMAGEPATH="/homes/"+MYLOGIN+"/PictureShareDB/images"
+HOMEDIR= expanduser("~")
+DATABASE=HOMEDIR+"/PUNetwork/purdue_network.db"
 
 ##############################################################
 # Define function to generate login HTML form.
