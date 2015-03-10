@@ -2,11 +2,11 @@
 
 import sqlite3, os
 
-try:
+if os.path.exists("purdue_network.db"):
 	os.remove("purdue_network.db")
-except FileNotFoundError:
-	tmp = open("purdue_network.db", "w")
-	tmp.close()
+
+tmp = open("purdue_network.db", "w")
+tmp.close()
 conn = sqlite3.connect('purdue_network.db')
 
 c = conn.cursor()
@@ -14,16 +14,14 @@ c = conn.cursor()
 # Turn on foreign key support
 c.execute("PRAGMA foreign_keys = ON")
 
-# Create users table
-# for classification: 0 for student, 1 TA, 2 Prof
+# Create users table; path for each user class list
 c.execute('''CREATE TABLE users
 	     (name TEXT NOT NULL,
 	      user_name TEXT NOT NULL,
 	      user_id INTEGER NOT NULL,
 	      password TEXT NOT NULL,
 	      email TEXT NOT NULL,
-	      class_list TEXT NOT NULL,
-	      classification INTEGER NOT NULL,
+	      path TEXT NOT NULL,
 	      PRIMARY KEY(user_name))''')
 
 # Create QA_Thread table
