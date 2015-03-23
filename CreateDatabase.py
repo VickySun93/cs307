@@ -22,7 +22,7 @@ c.execute('''CREATE TABLE users
 	      password TEXT NOT NULL,
 	      email TEXT NOT NULL,
 	      path TEXT NOT NULL,
-	      PRIMARY KEY(user_name))''')
+	      PRIMARY KEY(user_name, user_id))''')
 
 # Create QA_Thread table
 c.execute('''CREATE TABLE qathreads
