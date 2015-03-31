@@ -308,6 +308,6 @@ class Course(models.Model):
 	course_major = models.CharField(max_length=4, choices=COURSE_MAJORS)
 	course_title = models.CharField(max_length=50)
 	course_desc = models.CharField(max_length= 1000)
-	course_CRN = models.IntegerField(default=0)
+	course_CRN = models.IntegerField(default=0, unique=True)
 	def __str__(self):
 		return self.course_CRN
