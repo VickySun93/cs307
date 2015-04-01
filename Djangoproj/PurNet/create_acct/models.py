@@ -12,4 +12,4 @@ class User(models.Model):
 	password = models.CharField(max_length=40)
 	courses=models.ManyToManyField(Course)
 	def __str__(self):
-		return self.id
+		return str(self.id)

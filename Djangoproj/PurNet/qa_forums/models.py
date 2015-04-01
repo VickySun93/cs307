@@ -11,7 +11,7 @@ class Forum_Question(models.Model):
 	question_text = models.CharField(max_length=1000)
 	ques_date = models.DateTimeField('date published')
 	def __str__(self):
-		return self.id
+		return str(self.id)
 
 class Forum_Response(models.Model):
 	response_owner=models.ForeignKey(User)
@@ -19,6 +19,6 @@ class Forum_Response(models.Model):
 	response_text=models.CharField(max_length=2000)
 	resp_date=models.DateTimeField('date published')
 	def __str__(self):
-		return self.id
+		return str(self.id)
 
 # Create your models here.
