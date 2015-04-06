@@ -1,5 +1,5 @@
 """
-Django settings for PurNet project.
+Django settings for purduenetwork project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4lk2dqkggv+$^+j1j4uk#=d^rzhxsoas3z9unpoynkb4uu%b(='
+SECRET_KEY = 'b29&%!3luj^9+8q1p#p=c2h!6w%34rwc2$an)kpj=+ix46-yjg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -26,7 +26,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 SITE_ID = 1
+
 
 # Application definition
 
@@ -37,13 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'course_mang',
-    'create_acct',
-    'login',
-    'mang_acct',
-    'pass_mang',
-    'qa_forums',
-    'rate_prof',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'PurNet.urls'
+ROOT_URLCONF = 'purduenetwork.urls'
 
-WSGI_APPLICATION = 'PurNet.wsgi.application'
+WSGI_APPLICATION = 'purduenetwork.wsgi.application'
 
 
 # Database
@@ -67,7 +62,7 @@ WSGI_APPLICATION = 'PurNet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'purdue_network.db'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -76,29 +71,23 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'EST'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
-
+#MEDIA_URL = '  '
+#MEDIA_ROOT = '  '
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_ROOT  =  '/static/'
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(__file__), 'static' ,),
-
-    #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/static',
+    'c:/purduenetwork/static',
 )
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates' ,),
-    #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/templates',
+     'c:/purduenetwork/templates',
 )

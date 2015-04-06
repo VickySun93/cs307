@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title> {% block title %} {% endblock %}</title>
+	<script type="text/javascript" src="{{ STATIC_URL}}js/jquary.js"></script>
+	<link href="{{STATIC_URL}}css/main.css" rel="stylesheet" type="text/css" /> 
+	
+</head>
+
+<body>
+	<div class="header">
+		<div class ="wrap">
+			<div class="logo"></div>
+				<br />
+			<div class="clr"></div>
+				<br />
+			<div class="nav">
+				<ul>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Mailbox</a></li>
+					<li><a href="#">Tutor System</a></li>
+					<li><a href="#">Account Setting</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="content">
+			{% block content %}
+			{% endblock %}
+
+		</div>
+	</div>
+</body>
+</html>
