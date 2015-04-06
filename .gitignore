@@ -1,1 +1,3 @@
 Thumbs.db
+*.pyc
+/Djangoproj/PurNet/PurNet/__pycache__
