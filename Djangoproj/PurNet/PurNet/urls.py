@@ -4,7 +4,11 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # Examples:
+<<<<<<< HEAD
     url(r'^$', 'PurNet.views.home', name='home'),
+=======
+    url(r'^$', 'PurNet.views.index'),
+>>>>>>> 4f0c9e3f409fd182a13409226c9a415cedddb8dc
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
