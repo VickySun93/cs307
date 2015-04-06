@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     #url(r'^pass_mang/', include('pass_mang.urls')),
     #url(r'^qa_forums/', include('qa_forums.urls')),
     #url(r'^rate_prof/', include('rate_prof.urls')),
+    #url(r'^reset/', include('reset.urls')),
     url(r'^user_homepage/', include('user_homepage.urls')),
     #url(r'^admin/', include(admin.site.urls)),
 )
