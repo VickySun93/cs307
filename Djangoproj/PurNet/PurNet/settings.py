@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'pass_mang',
     'qa_forums',
     'rate_prof',
+    'reset',
 )
 
 MIDDLEWARE_CLASSES = (
