@@ -35,7 +35,7 @@ def profile(request):
         user.profile.url = url[:50]
 
         user.save()
-        messages.add_message(request, messages.SUCCESS, 'Your profile were successfully edited.')
+        messages.add_message(request, messages.SUCCESS, 'Your profile was successfully edited.')
     uploaded_picture = False
     try:
         if request.GET['upload_picture'] == 'uploaded':
@@ -58,7 +58,7 @@ def password(request):
             if new_password == confirm_new_password:
                 user.set_password(new_password)
                 user.save()
-                messages.add_message(request, messages.SUCCESS, 'Your password were successfully changed.')
+                messages.add_message(request, messages.SUCCESS, 'Your password was successfully changed.')
             else:
                 messages.add_message(request, messages.ERROR, 'The new password didn\'t match.')
         else:
