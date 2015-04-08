@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}PUNetwork - Sign up{% endblock title %}
+
+{% block head_extra %}
+  <link href="{% static 'authy/style.css' %}" rel="stylesheet">
+  <style type="text/css">
+  .alert {
+    width: auto;
+  }
+  </style>
+{% endblock head_extra %}
+
+{% block content %}
+  <div class="signup">
+    <h1 class="join">Sign up for PUNetwork</h1>
+    <form action="/signup/" method="post">
+      {% csrf_token %}
+      <div class="form-row">
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+        <span class="info">(Usernames may contain <strong>alphanumeric</strong>, <strong>_</strong> and <strong>.</strong> characters)</span>
+        {{ form.username }}
+        {{ form.username.errors }}
+      </div>
+      <div class="form-row">
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+      <div class="form-row">
+        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+        {{ form.password }}
+        {{ form.password.errors }}
+      </div>
+      <div class="form-row">
+        <label for="{{ form.confirm_password.id_for_label }}">{{ form.confirm_password.label }}</label>
+        {{ form.confirm_password }}
+        {{ form.confirm_password.errors }}
+      </div>
+      <button type="submit" class="btn btn-success btn-large">Create an account</button>
+    </form>
+  </div>
+{% endblock content %}
