@@ -2,24 +2,23 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('course_mang', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name='Site_User',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('username', models.CharField(max_length=16, unique=True)),
-                ('email', models.CharField(max_length=30)),
-                ('password', models.CharField(max_length=40)),
+                ('id', models.AutoField(auto_created=True, serialize=False, primary_key=True, verbose_name='ID')),
                 ('courses', models.ManyToManyField(to='course_mang.Course')),
+                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },

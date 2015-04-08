@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 from django.utils import timezone
-from create_acct.models import Site_User
+from authy.models import Site_User
 from course_mang.models import Course
 
 class Forum_Question(models.Model):

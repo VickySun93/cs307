@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('create_acct', '0001_initial'),
+        ('authy', '0001_initial'),
         ('course_mang', '0001_initial'),
     ]
 
@@ -15,12 +15,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Forum_Question',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(serialize=False, verbose_name='ID', primary_key=True, auto_created=True)),
                 ('thread_title', models.CharField(max_length=100)),
                 ('question_text', models.CharField(max_length=1000)),
                 ('ques_date', models.DateTimeField(verbose_name='date published')),
                 ('thread_course', models.ForeignKey(to='course_mang.Course')),
-                ('thread_owner', models.ForeignKey(to='create_acct.User')),
+                ('thread_owner', models.ForeignKey(to='authy.Site_User')),
             ],
             options={
             },
@@ -29,11 +29,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Forum_Response',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(serialize=False, verbose_name='ID', primary_key=True, auto_created=True)),
                 ('response_text', models.CharField(max_length=2000)),
                 ('resp_date', models.DateTimeField(verbose_name='date published')),
                 ('forum_question', models.ForeignKey(to='qa_forums.Forum_Question')),
-                ('response_owner', models.ForeignKey(to='create_acct.User')),
+                ('response_owner', models.ForeignKey(to='authy.Site_User')),
             ],
             options={
             },

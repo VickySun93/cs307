@@ -32,30 +32,30 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'course_mang',
-    'authy',
-    'login',
-    'mang_acct',
-    'pass_mang',
-    'qa_forums',
-    'rate_prof',
-    'reset',
+	'django.contrib.admin',
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.messages',
+	'django.contrib.staticfiles',
+	'course_mang',
+	'authy',
+	'login',
+	'inbox',
+	'mang_acct',
+	'qa_forums',
+	'rate_prof',
+	'reset',
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.middleware.common.CommonMiddleware',
+	'django.middleware.csrf.CsrfViewMiddleware',
+	'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+	'django.contrib.messages.middleware.MessageMiddleware',
+	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'PurNet.urls'
@@ -67,11 +67,12 @@ WSGI_APPLICATION = 'PurNet.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'purdue_network.db'),
-    }
+	'default': {
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': os.path.join(BASE_DIR, 'purdue_network.db'),
+	}
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -92,20 +93,17 @@ USE_TZ = True
 STATIC_ROOT  =  '/static/'
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-<<<<<<< HEAD
+STATICFILES_DIRS = (
+	# Put strings here, like "/home/html/static" or "C:/www/django/static".
+	# Always use forward slashes, even on Windows.
+	# Don't forget to use absolute paths, not relative paths.
 #os.path.join(os.path.dirname(__file__), 'static',),
 #)
-=======
-    os.path.join(os.path.dirname(__file__), 'static' ,),
+	os.path.join(os.path.dirname(__file__), 'static' ,),
 
-    #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/static',
+	#'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/static',
 )
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates' ,),
-    #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/templates',
+	os.path.join(os.path.dirname(__file__), 'templates' ,),
+	#'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/templates',
 )
->>>>>>> d6da6b23664c9f7f946c01270d09f40b7e390052
