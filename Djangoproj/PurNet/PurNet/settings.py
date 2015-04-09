@@ -57,7 +57,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
+LOGIN_URL = '/signin/'
 ROOT_URLCONF = 'PurNet.urls'
 
 WSGI_APPLICATION = 'PurNet.wsgi.application'
