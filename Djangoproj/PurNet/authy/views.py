@@ -28,7 +28,7 @@ def signup(request):
             Site_User.objects.create(user=_user);
             login(request, _user)
             messages.add_message(request, messages.SUCCESS, 'Your account were successfully created.')
-            return HttpResponseRedirect('/' + username + '/')
+            return HttpResponseRedirect("/user_homepage")
     else:
         context = RequestContext(request,  {'form': SignUpForm() })
         return render_to_response('auth/signup.html', context)
