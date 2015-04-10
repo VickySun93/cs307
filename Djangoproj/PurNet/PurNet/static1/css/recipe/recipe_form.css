@@ -1,0 +1,136 @@
+.step_preview{
+	width: 200px;
+	height: 150px;
+}
+.step_image_delete{
+	position: absolute;
+	top:0px;
+	right: 0px;
+	display: none;
+}
+.step-uploader{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+.step_image_frame{
+	width: 200px;
+	height: 150px;
+	border: 1px solid white;
+	position: relative;
+}
+
+#cover_image_delete{
+	position: absolute;
+	top:0px;
+	right: 0px;
+	display: none;
+}
+#cover_image_preview{
+	width: 300px;
+	height: 240px;
+}
+#recipe_uploader{
+	position: absolute;
+	top:90px;
+	left:100px;
+}
+
+#cover_image_frame {
+	width: 300px;
+	height: 240px;
+	border: 1px solid white;
+	position: relative;
+}
+
+#recipe_table {
+	position: relative;
+	left:20px;
+	top:5px;
+}
+#ingredient_table{
+	position: relative;
+	left:110px;
+	top:5px;
+}
+#step_table {
+	position: relative;
+	left:110px;
+	/*top:10px;*/
+}
+#mod-ingredient {
+	position: relative;
+	/*top:30px;*/
+}
+#mod-step {
+	position: relative;
+	top:50px;
+}
+#save_button {
+	position: relative;
+	margin-top:5em;
+	margin-right: 3em;
+	width: 110px;
+	height: 40px
+
+}
+legend {
+	color: fireBrick;
+	font-size: 1.6em;
+	font-weight: bold;
+	margin: 1em 0px;
+	padding: 0px 0.5em;
+	border-bottom-width: 2px;
+	width: 97%;
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+
+fieldset {
+	padding: 0px 0.5em 0.5em;
+	
+}
+
+#id_name, #id_category, #id_brief, #id_cover_image, #id_tips, #id_prep_time, #id_cook_time {
+	resize: none;	
+	width: 300px;
+}
+#id_category{
+	width: 312px;
+}
+
+.qq-upload-list{
+	display: none;
+}
+
+form {
+	margin:1em;
+	background: -moz-radial-gradient(center center , ellipse farthest-corner, rgb(120,82,49) 0%, rgb(206,168,134) 100%) repeat fixed 0% 0% transparent;
+
+}
+
+th{
+	font-size: 1.3em;
+}
+
+td.form-label {
+	font-family: 'Montserrat Alternates', sans-serif;
+	text-align: right;
+}
+
+th {
+	font-family: 'Montserrat Alternates', sans-serif;
+	text-align: left;
+}
+
+textarea {
+	height: 80px;
+	resize: none;
+}
+
+a.delete-row {
+	float: right;
+}
+
+form#newFormsets {
+	padding-bottom: 60px;
+}

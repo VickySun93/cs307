@@ -1,0 +1,581 @@
+/*div.#mod-container {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: scroll;
+}
+
+h1.mod-page-title {
+	font-family: 'Dancing Script', cursive;
+	color: #EE9A2A;
+	font-size: 28px;
+	font-style: bold;
+	line-height: 30px;
+	margin-bottom: 15px;
+}
+
+h2 {
+	color: rgb(130, 130, 130);
+	font-size: 22px;
+	font-style: bold;
+	line-height: 30px;
+	margin-bottom: 15px;
+	padding-left: 15px;
+}
+
+p {
+	padding-left: 15px;
+	margin-left: 25px;
+}*/
+
+.bold {
+	font-weight: bold;
+}
+
+h1 span.mod-edit {
+	font-family: 'Kite One', sans-serif;
+	color: rgb(130, 130, 130);
+	font-size: 14px;
+	font-style: bold;
+}
+
+h1 span.mod-edit a {
+	text-decoration: none;
+}
+
+#recipe_img_div {
+	height: 400px;
+	overflow: hidden;
+}
+
+div.mod-page-header {
+	display: inline;
+}
+
+div.mod-recipe-stat {
+	padding: 5px;
+	max-height: 50px;
+}
+
+div.mod-recipe-stat .mod-recipe-count,
+div.mod-recipe-stat .mod-recipe-like {
+	height: 40px;
+	line-height: 40px;
+}
+
+div.mod-recipe-stat .mod-recipe-count {
+	padding-left: 10px;
+}
+
+div.mod-recipe-stat .mod-recipe-count span {
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+}
+
+div.mod-recipe-stat .mod-recipe-like {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+div.mod-recipe-stat .mod-recipe-like > a {
+	text-decoration: none;
+}
+
+div.mod-recipe-stat .mod-recipe-like > a > #mod-recipe-likebtn, 
+div.mod-recipe-stat .mod-recipe-like > a > #mod-recipe-likedbtn {
+	border-radius: 0;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+div.mod-recipe-stat .mod-recipe-like > a > #mod-recipe-likebtn{
+	background: white;
+}
+
+div.mod-recipe-stat .mod-recipe-like > a > #mod-recipe-likedbtn {
+	background: rgb(77, 221, 221);
+}
+
+div.mod-recipe-ratings, div.mod-recipe-ratings > div {
+	display: inline;
+	font-size: 14px;
+	color: white;
+	height: 40px;
+	line-height: 40px;
+}
+
+div.mod-recipe-ratings {
+	padding-left: 15px;
+}
+
+div.mod-recipe-share {
+	height: 30px;
+	max-height: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ul.belong-list a, ul.ingredient-list a, a.hide-show {
+	text-decoration: none;
+}
+
+a.hide-show{
+	display: none;
+}
+
+div.mod-recipe-share span.mod-recipe-upload {
+	height: 40px;
+}
+
+div.mod-recipe-share span.mod-recipe-upload > a:link,
+div.mod-recipe-comments > a:link, ul.belong-list a:link,
+ul.ingredient-list a:link {
+	color: white;
+}
+
+div.mod-recipe-share span.mod-recipe-upload > a:visited,
+div.mod-recipe-comments > a:visited, ul.belong-list a:visited,
+ul.ingredient-list a:visited {
+	color: white;
+}
+
+div.mod-recipe-share span.mod-recipe-upload > a:hover,
+div.mod-recipe-comments > a:hover, ul.belong-list a:hover,
+ul.ingredient-list a:hover {
+	color: rgb(0, 191, 255);
+}
+
+div.mod-recipe-share span.mod-recipe-upload > a:active,
+div.mod-recipe-comments > a:active, ul.belong-list a:active,
+ul.ingredient-list a:active {
+	background: rgb(0, 191, 255);
+	color: white;
+}
+
+div.mod-recipe-share span.mod-recipe-upload > a, ul.belong-list a: {
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	padding-left: 15px;
+}
+
+p.mod-recipe-brief-content, p.mod-recipe-tip-content, p.empty-note, 
+ul.ingredient-list, div.mod-recipe-steps ol, div.i-title {
+	color: white;
+	font-size: 16px;
+	text-align: justify;
+}
+
+ul.ingredient-list a i.icon-shopping-cart {
+	color: #CA250E;
+	text-decoration: none;
+}
+
+div.i-title {
+	font-weight: bold;
+}
+
+div.mod-recipe-comments {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.mod-recipe-comments > a {
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div#rateModal > .modal-body form {
+	margin-bottom: 5px;
+}
+
+div#rateModal > .modal-body fieldset div#modal-rating-title,
+div#rateModal > .modal-body fieldset div#comment_star,
+div#rateModal > .modal-body fieldset div#comment_target {
+	display: inline;
+	padding: 5px;
+}
+
+div#rateModal > .modal-body fieldset div#modal-cmt-title {
+	padding: 5px;
+}
+
+div#rateModal > .modal-body fieldset textarea#id_votecomment {
+	margin-left: 5px;
+	width: 95%;
+	height: 50px;
+	resize: none;
+}
+
+div#rateModal > .modal-body fieldset p{
+	padding-right: 15px;
+}
+
+div#rateModal > .modal-header {
+	border-bottom: 0;
+}
+
+div#rateModal > .modal-header > #modal-title,
+div#rateModal > .modal-header > #modal-closebtn {
+	margin-bottom: 0;
+	display: inline;
+}
+
+aside.mod-side div.mod-author a, a#rate-author {
+	text-decoration: none;
+	clear: both;
+}
+
+aside.mod-side div.mod-author a > span {
+	font-size: 20px;
+	color: white;
+	margin-left: 15px;
+}
+
+aside.mod-side div.mod-author a > span:link, a#rate-author:link {
+	color: white;
+}
+
+aside.mod-side div.mod-author a > span:visited,
+div.mod-recipe-comments > a:visited {
+	color: rgb(169, 169, 169);
+}
+
+aside.mod-side div.mod-author a > span:hover,
+div.mod-recipe-comments > a:hover, a#rate-author:hover {
+	color: rgb(0, 191, 255);
+}
+
+aside.mod-side div.mod-author a > span:active,
+div.mod-recipe-comments > a:active, a#rate-author:active {
+	background: rgb(0, 191, 255);
+	color: white;
+}
+
+div.mod-recipe-brief, div.mod-reicpe-ingredients, 
+div.mod-recipe-steps, div.mod-recipe-tip {
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #F5D982;
+}
+
+img.avatar-img {
+	height: 50px;
+	width: 50px;
+}
+
+ul.rate-hist {
+	margin-left: 0;
+}
+
+div.mod-reicpe-ingredients, div.mod-recipe-steps, div.mod-recipe-tip, div.mod-recipe-did {
+	margin-top: 20px;
+}
+
+div.mod-recipe-img {
+	margin-bottom: 0px;
+}
+
+textarea#id_comment {
+	resize: none;
+	width: 268px;
+	height: 80px;
+}
+
+button#id_comment_submit {
+	float: right;
+	border-radius: 0;
+	font-weight: bold;
+}
+
+ul.ingredient-list {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+ul.ingredient-list li.ingre-must {
+	margin-left: -20px;
+}
+
+div.recipe-content {
+	margin-left: 40px;
+}
+
+div.mod-recipe-steps ol {
+	list-style-type: none;
+}
+
+div.mod-recipe-steps div.recipe-content {
+	margin-left: 15px;
+}
+
+div.mod-recipe-steps ol li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div.mod-recipe-steps ol li:not(:first-child) {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #F5D982
+}
+
+span.mod-user-follow {
+	float: right;
+	position: relative;
+	top: 10px;
+}
+
+div.mod-recipe-title, div.mod-discussion span, div.mod-recipe-title span {
+	font-size: 18px;
+	font-weight: bold;
+	color: #CA250E;
+	margin-bottom: 10px;
+}
+
+a#rate-author {
+	font-size: 16px;
+	font-weight: bold;
+	color: #EE9A2A;
+	line-height: 16px;
+}
+
+span#rate-score {
+	font-size: 14px;
+	font-weight: bold;
+	color: #EE9A2A;
+	margin-left: 5px;
+	line-height: 14px;
+}
+
+span#rate-star {
+	line-height: 14px;
+}
+
+
+/*CSS for recommend in sidebar*/
+#recommend-img {
+	width: 100%;
+}
+
+.mod-recipe-recommends {
+	width: 282px;
+	min-height: 500px;
+}
+
+.recommend-img-div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+
+}
+
+.caption {
+	background: rgba(255,255,255,0.8);
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	display: none;
+	margin: 0;
+	padding: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	text-align: justify;
+	vertical-align: bottom;
+}
+
+.caption h1 {
+	font-size: 28px;
+	padding-top: 30px;
+}
+
+.caption p{
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	color: #D26;
+}
+
+.heart {
+	color: red;
+	font-size: 30px;
+	text-align: right;
+	direction: rtl;
+	float: right;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+
+/*CSS for image popup*/
+.enlarge{
+	cursor: pointer;
+}
+
+.enlarge:hover{
+	transform: scale(1.3);
+	-ms-transform: scale(1.3); /* IE 9 */
+	-webkit-transform: scale(1.3); /* Safari and Chrome */
+	-o-transform: scale(1.3); /* Opera */
+	-moz-transform: scale(1.3); /* Firefox */
+}
+
+
+.popupbox {
+/*	width:500px;
+	height:300px;
+	max-height: 500px;
+	max-width: 800px;*/
+
+	background-repeat:no-repeat;
+	display: none; /* Hidden as default */
+	float: left;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	-webkit-box-shadow: 0px 0px 20px #000;
+	-moz-box-shadow: 0px 0px 20px #000;
+	box-shadow: 0px 0px 20px #000;
+	color: #E3CB9F;
+}
+
+#fade { 
+	display: none; /* Hidden as default */
+	background: #000;
+	position: fixed; left: 0; top: 0;
+	width: 100%; height: 100%;
+	opacity: .80;
+	z-index: 9999;
+}
+
+.fullImg{
+/*	width: 100%;
+	height: 100%;*/
+	max-height: 450px;
+}
+
+#prevImg{
+	position: absolute;
+	left: 0;
+	font-size: 50px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#nextImg{
+	position: absolute;
+	right: 0;
+	font-size: 50px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#prevImg:hover, #nextImg:hover {
+	color: #D26;
+}
+
+a#prevA {
+	position: relative;
+	left: 80px;
+}
+
+a#nextA {
+	position: relative;
+	left: 90px;
+}
+
+a#prevA, a#nextA {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a#prevA > i, a#nextA > i {
+	font-size: 24px;
+	font-weight: bold;
+	color: darkGray;
+}
+
+a.did-show-control {
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 25px;
+	text-align: center;
+	width: 24px;
+	height: 24px;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	background-color: rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	margin: 0;
+	top: 60px;
+	position: relative;
+	cursor: pointer;
+	display: none;
+}
+
+a.did-show-control, ul.did-show-inner {
+	float: left;
+}
+
+ul.did-show-inner {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	left: -151px; /* width of an item */
+	width: 9999px;
+}
+
+ul.did-show-inner > li {
+	float: left;
+	position: relative;
+	width: 141px;
+	padding: 0;
+	height: 141px;
+	margin: 0;
+	padding: 5px;
+}
+
+ul.did-show-inner > li a {
+	text-decoration: none;
+}
+
+ul.did-show-inner > li img {
+	margin:0;
+	height: 141px;
+	width: 141px;
+}
+
+div.did-show-outer {
+	float: left;
+	width: 472px;
+	overflow: hidden;
+}
+
+div.did-show-caption {
+	position: relative;
+	top: -40px;
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 40px;
+	padding-left: 10px;
+	color: white;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: none;
+}

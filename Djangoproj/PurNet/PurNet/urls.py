@@ -25,5 +25,7 @@ urlpatterns = patterns('',
     #url(r'^rate_prof/', include('rate_prof.urls')),
     #url(r'^reset/', include('reset.urls')),
     url(r'^user_homepage/', include('user_homepage.urls')),
+    url(r'^$', 'purdue.views.login', name='login'),
+    url(r'^logout/', 'purdue.views.logout', name='logout'),
     #url(r'^admin/', include(admin.site.urls)),
 )

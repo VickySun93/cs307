@@ -1,0 +1,37 @@
+.fieldWrapper {
+	margin: 0px;
+}
+
+.fieldWrapper ul{
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.fieldWrapper > .shortPass{
+	position: relative;
+
+	top: -5px;
+	right: 50px;
+}
+
+.fieldWrapper > .badPass{
+	position: relative;
+
+	top: -5px;
+	right: 50px;
+}
+
+
+.fieldWrapper > .goodPass{
+	position: relative;
+
+	top: -5px;
+	right: 50px;
+}
+
+
+.fieldWrapper > .strongPass{
+	position: relative;
+	top: -5px;
+	right: 50px;
+}

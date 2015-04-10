@@ -1,0 +1,100 @@
+a {
+  color: #A2C;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #D26;
+  text-decoration: none;
+}
+
+
+.caption h1 {
+  font-size: 28px;
+  padding-top: 30px;
+}
+
+
+#hot-recipes {
+  background: #FFF;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+  clear: both;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+
+.box {
+  margin: 5px;
+  padding: 5px;
+  background: #D8D5D2;
+  font-size: 11px;
+  line-height: 1.4em;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+
+
+.box img,
+#tumblelog img {
+  display: block;
+  width: 100%;
+}
+
+.box {
+  text-align: left; 
+}
+
+
+
+.col1 { width: 80px; }
+.col2 { width: 180px; }
+.col3 { width: 200px; }
+.col4 { width: 380px; }
+.col5 { width: 480px; }
+
+.col1 img { max-width: 80px; }
+.col2 img { max-width: 180px; }
+.col3 img { max-width: 200px; }
+.col4 img { max-width: 380px; }
+.col5 img { max-width: 480px; }
+
+.caption {
+  background: rgba(255,255,255,0.8);
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  display: none;
+  margin: 0;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  text-align: justify;
+  vertical-align: bottom;
+}
+
+.caption p{
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.heart {
+  color: red;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+

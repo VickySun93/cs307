@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 	'qa_forums',
 	'rate_prof',
 	'reset',
+                   'homepage',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -87,7 +88,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_ROOT  =  '/static/'
@@ -99,12 +101,14 @@ STATICFILES_DIRS = (
 	# Don't forget to use absolute paths, not relative paths.
 #os.path.join(os.path.dirname(__file__), 'static',),
 #)
-	os.path.join(os.path.dirname(__file__), 'static' ,),
-
+                os.path.join(os.path.dirname(__file__), 'static' ,),
+                os.path.join(BASE_DIR, "static"),'/var/www/static/',),
+                 os.path.join(os.path.dirname(__file__), 'static1' ,),
 	#'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/static',
 )
 TEMPLATE_DIRS = (
 	os.path.join(os.path.dirname(__file__), 'templates' ,),
+                   os.path.join(os.path.dirname(__file__), 'templates1' ,),
 	#'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/templates',
 )
 

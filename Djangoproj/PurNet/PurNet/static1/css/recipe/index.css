@@ -1,0 +1,451 @@
+/*body {
+	overflow: hidden;
+	height: 100%;
+}*/
+
+#searchinput {
+	border-radius: 0px;
+}
+
+#hide-arrow{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10;
+	cursor: pointer;
+	font-size: 1.8em;
+}
+
+#hide-arrow:hover {
+	color: #D26;
+}
+
+.image-show {
+	position: relative;
+}
+
+.fixed-bar {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+
+.fixed-bar a{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.column {
+	float: left;
+	width: 320px;
+	margin-right: 40px;
+}
+.column  .row {
+	float: left;
+	width: 100%;
+	padding-bottom: 13px;
+}
+.column.small { width: 90px; }
+.column.small .row { padding-bottom: 5px;}
+.column SELECT { width: 180px;}
+.column LABEL {cursor: pointer;}
+.column  .row SPAN.pager { float: left; margin-right: 15px;}
+.column  .row A { position: relative; }
+P.larger-size { font-size: 16px; }
+#page STRONG { color: #FFFFFF; }
+#nav UL {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#nav UL LI {
+	display: inline;
+	margin-right: 8px;
+}
+#nav UL LI.showPage A { color: #fff; }
+
+
+#bg-show {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index:-2;	
+}
+
+.image-show .elastislide-horizontal {
+	background-color: #000;
+	padding: 30px 60px;
+}
+
+.no-touch .image-show .elastislide-horizontal {
+	opacity: 0.8;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.no-touch .image-show .elastislide-horizontal:hover {
+	opacity: 1;
+}
+
+.image-show .elastislide-wrapper nav span {
+	background-color: #000;
+}
+
+.image-show .elastislide-carousel ul li a{
+	padding: 0 10px;
+}
+
+.image-show .elastislide-carousel ul li a img {
+	border-radius: 10px;
+	border: none;
+}
+
+.demo-4 .elastislide-horizontal {
+	background-color: transparent;
+	border-radius: 20px 20px 0 0;
+}
+
+.image-show .elastislide-horizontal.elastislide-loading {
+	background-image: url(../../img/loading_dark.gif);
+}
+
+@media screen and (max-width: 460px) {
+	.image-show .elastislide-horizontal {
+		padding: 10px 40px;
+	}
+}
+
+
+/*change nav bar to be transparent*/
+#colorNav > ul > li{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+
+}
+
+/* image caption hover effect */
+
+/*.image-show .fixed-bar ul li .carousel1-caption:hover {
+	top: 90px;
+	left: 10px;
+	width: 130px;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 5px;
+}*/
+
+
+
+div.content.search-form{
+	/*visibility: hidden;*/
+	position: fixed;
+	left: 50%;
+	margin-left: -208px;
+}
+
+div.search-div {
+	padding: 10px;
+	background-color: rgba(128, 128, 128, 0.2);
+}
+
+div.search-div input {
+	padding: .25em 5px .31em 30px;
+	height: 29px;
+	line-height: 29px;
+	font-size: 100%;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+
+div.search-div span {
+	position: fixed;
+}
+
+div.search-div span i {
+	font-size: 29px;
+	line-height: 29px;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+span.add-on {
+	font-size: 29px;
+}
+
+
+/* CSS for suggestion box */
+#suggestions {
+	z-index: 99999; 
+	border-width:1px; 
+	border-color:#919191; 
+	border-style:solid; 
+	width:416px; 
+	font-size:10px; 
+	line-height:14px; 
+	background-color: rgba(255,255,255,0.8);
+}
+#suggestions a { 
+	display:block; 
+	clear:left; 
+	height:56px; 
+	text-decoration:none; 
+}
+#suggestions a:hover { 
+	background-color:#b7b7b7; 
+	color:#ffffff; 
+}
+#suggestions a img { 
+	float:left; 
+	padding:5px 10px; 
+	height: 50px;
+	width: 50px;
+}
+#suggestions a span.searchheading { 
+	display:block; 
+	font-weight:bold; 
+	padding-top:5px; 
+	color:#191919; 
+}
+#suggestions a:hover span.searchheading { 
+	color:#ffffff; 
+}
+#suggestions a span { 
+	color:#555555; 
+}
+#suggestions a:hover span { 
+	color:#f1f1f1; 
+}
+#suggestions span.category { 
+	font-size:11px; 
+	margin:5px; 
+	display:block; 
+	color:#ABCEDF; 
+	background-color: #FDECBA;
+}
+#suggestions span.seperator { 
+	float:right; 
+	padding-right:15px; 
+	margin-right:5px;
+  background-image:url(../images/shortcuts_arrow.gif); 
+  background-repeat:no-repeat; 
+  background-position:right; 
+}
+#suggestions span.seperator a { 
+	background-color:transparent; 
+	display:block; 
+	margin:5px; 
+	height:auto; 
+	color:#ffffff; 
+}
+
+
+/**************************/
+
+/* CSS for slider show */
+div.show-img {
+	width: 100px;
+	height: 100px;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.show-img.upper {
+	background: url(../../img/index/image.jpg) no-repeat;
+}
+
+div.show-caption {
+	font-family: "Ribeye";
+	font-size: 16px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 10px;
+	width: 130px;
+}
+
+div.show-caption.lower {
+	font-family: 'Chela One', cursive;
+	font-size: 16px;
+	position: relative;
+	left: -5px;
+}
+
+ul.circular-show-inner {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li.show-item {
+	/*display: inline;*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	position: fixed;
+}
+
+li.show-item a {
+	text-decoration: none;
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+	padding: 5px;
+}
+
+li.show-item a:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+}
+
+div.circular-show-outer.upper-level {
+	position: fixed;
+	top: 30%;
+	width: 100%;
+	overflow: hidden;
+	left: 0px;
+}
+
+div.circular-show-outer.lower-level {
+	float: left;
+	position: fixed;
+	overflow: hidden;
+}
+
+ul.circular-show-inner.lower-level {
+	position: relative;
+	overflow: hidden;
+	left: -130px; /* width of an item */
+	width: 9999px;
+	display: none;
+}
+
+ul.circular-show-inner.lower-level > li {
+	float: left;
+	position: relative;
+	width: 140px;
+	padding: 0;
+	height: 140px;
+	margin: 0;
+}
+
+ul.lower-level div.show-img {
+	width: 80px;
+	height: 80px;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.show-img.lower.courses {
+	background: url(../../img/index/courses/image.jpg) no-repeat;
+}
+
+div.show-img.lower.cuisines {
+	background: url(../../img/index/cuisines/image.jpg) no-repeat;
+}
+
+div.show-img.lower.sources {
+	background: url(../../img/index/sources/image.jpg) no-repeat;
+}
+
+div.show-img.lower.diets {
+	background: url(../../img/index/diets/image.jpg) no-repeat;
+}
+
+ul.lower-level > li > a {
+	height: 120px;
+	width: 120px;
+}
+
+a.show-control {
+	position: fixed;
+	/*display: none;*/
+	text-decoration: none;
+	color: white;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 43px;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+	margin: 0;
+}
+
+
+/**************************/
+
+/* CSS for login bar */
+div.logbar {
+	position: fixed;
+	right: -90px;
+	top: 150px;
+	height: 100px;
+	width: 120px;
+}
+
+div.logbar a {
+	text-decoration: none;
+	color: white !important;
+}
+
+div.logbar-content {
+	position: relative;
+	left: 30px;
+	top: -100px;
+	width: 90px;
+	height: 100px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.logbar-sign {
+	vertical-align: middle;
+	border-radius: 30px 0px 0px 30px;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 30px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.logbar-sign a {
+	padding-left: 4px;
+	color:green;
+	width: 30px;
+	height: 100px;
+	font-size: 24px;
+}
