@@ -31,3 +31,4 @@ def compose(request):
         form = MessageForm(initial={'sender': request.user})
 
     return TemplateResponse(request, 'inbox/compose.html', {'form': form})
+
