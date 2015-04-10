@@ -1,0 +1,38 @@
+{% extends "base/base.html" %}
+{% load url from future %}
+{% block content%}
+
+<div class="wrapper-section">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="title-section">Inbox</h1>
+		</div>
+		<div class="panel-body">
+			
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation" class="active"><a href="{% url 'compose' %}" class="btn-compose btn btn-success">Compose</a></li>
+				<li role="presentation"><a href="{% url 'inbox' %}">Inbox <span class="badge">{{ messages.all|length }}</span></a></li>
+				<li role="presentation" ><a href="{% url 'sended' %}">Sent Mail</a></li>
+				<li role="presentation"><a href="{% url 'trash' %}">Trash</a></li>
+			</ul>
+			
+			<div class="row list-messages">
+				<ul class="list-group">
+				{% for message in messages.all%}
+					<li class="list-group-item">
+						<span class="label label-info">Send By: {{message.sender}}</span>
+					  	<blockquote>{{message.content}}</blockquote>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div><!-- end wrapper section-->
+
+
+<ol class="breadcrumb">
+	<li><a href="{% url 'logout' %}">Logout</a></li>
+</ol>
+
+{% endblock %}

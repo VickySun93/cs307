@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+{% load url from future %}
+{% block content%}
+
+{% if form.errors %}
+<p>{{form.errors}}.</p>
+{% endif %}
+
+<div class="wrapper-section">
+	<ol class="breadcrumb">
+		<li><a href="{% url 'inbox' %}">< back</a></li>
+	</ol>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="title-section">Inbox - Compose </h1>
+		</div>
+		<div class="panel-body">
+			
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation" class="active"><a href="{% url 'compose' %}" class="btn-compose btn btn-success">Compose</a></li>
+				<li role="presentation"><a href="{% url 'inbox' %}">Inbox</a></li>
+				<li role="presentation" ><a href="{% url 'sended' %}">Sent Mail <span class="badge">{{ messages.all|length }}</span></a></li>
+				<li role="presentation"><a href="{% url 'trash' %}">Trash</a></li>
+			</ul>
+			
+			<div class="form-wrapper-compose">
+		
+				<form method="post" action="{% url 'compose' %}" class="form-compose">
+				{% csrf_token %}
+					
+					 <div class="form-group">
+				    	{{ form.recipient.label_tag }}
+				    	{{ form.recipient }}
+				  	</div>
+				  	<div class="form-group">
+				    	{{ form.content.label_tag }}
+				    	{{ form.content }}
+				  	</div>
+				    	{{ form.sender }}
+
+					<input type="submit" value="Create" class="btn btn-success btn-lg btn-block" />
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div><!-- end wrapper section-->
+
+{% endblock %}
