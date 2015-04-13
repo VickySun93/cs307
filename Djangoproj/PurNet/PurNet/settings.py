@@ -46,6 +46,8 @@ INSTALLED_APPS = (
     'rate_prof',
     'reset',
     'homepage',
+    'group_mang',
+    'tutors',
 )
 
 MIDDLEWARE_CLASSES = (
