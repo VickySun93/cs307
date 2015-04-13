@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),'/var/www/static/',)
 
 
 # Quick-start development settings - unsuitable for production
@@ -102,7 +101,7 @@ STATICFILES_DIRS = ('',
 #os.path.join(os.path.dirname(__file__), 'static',),
 #)
     os.path.join(os.path.dirname(__file__), 'static' ,),
-    #os.path.join(BASE_DIR, "static"),'/var/www/static/',),
+    os.path.join(BASE_DIR, "static",'/var/www/static/',),
     os.path.join(os.path.dirname(__file__), 'static1' ,),
     #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/static',
 )
