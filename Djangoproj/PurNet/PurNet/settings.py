@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'qa_forums',
     'rate_prof',
     'reset',
-    'homepage',
+    #'homepage',
     'group_mang',
     'tutors',
 )
@@ -104,12 +104,12 @@ STATICFILES_DIRS = ('',
 #)
     os.path.join(os.path.dirname(__file__), 'static' ,),
     os.path.join(BASE_DIR, "static",'/var/www/static/',),
-    os.path.join(os.path.dirname(__file__), 'static1' ,),
+    #os.path.join(os.path.dirname(__file__), 'static1' ,),
     #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/static',
 )
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates' ,),
-    os.path.join(os.path.dirname(__file__), 'templates1' ,),
+    #os.path.join(os.path.dirname(__file__), 'templates1' ,),
     #'c:/Users/pandidannycn/Documents/CS307/Djangoproj/PurNet/user_homepage/templates',
 )
 
