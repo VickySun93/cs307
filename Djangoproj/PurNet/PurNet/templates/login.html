@@ -17,7 +17,8 @@
   </head>
   <body>
     <div class="container">
-			<form method='POST' action="/">
+			<form method='POST' action="user_homepage/">
+              {% csrf_token %}
         <section class="loginBox row-fluid">
           <section class="span7 left">
             <h2>Login</h2>
@@ -31,7 +32,7 @@
           <section class="span5 right">
             <h2>No Account ?</h2>
             <section>
-              <p>Just regist! </p>
+              <p>Just register! </p>
               <p><input type="button" value="Sign up" class="btn"></p>
             </section>
           </section>
