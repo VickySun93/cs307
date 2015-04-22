@@ -1,4 +1,292 @@
-{% extends "base/base.html" %}
-{% block content %}
-<hl></hl>
+{% extends 'nav.html' %}
+
+{% load static from staticfiles %}
+{% load url from future %}
+
+
+
+{% block csslink %}
+  {{ block.super }}
+
+  <link rel="stylesheet" href="{% static "css/bgstretcher.css" %}" type="text/css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Chela+One' rel='stylesheet' type='text/css' />
+  <style type="text/css">
+  @font-face {
+      font-family: "Ribeye";
+      src: url('/static/font/RibeyeMarrow-Regular.ttf');
+  }
+  .ribeye {
+      font-family: "Ribeye";
+  }
+  </style>
 {% endblock %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+<div class="login-modal">
+  <div class="logbar">
+    <div class="logbar-sign">
+      {% if user.is_authenticated %}
+        <a  ><i class="icon-user"></i></a>
+      {% else %}
+        <a href="#" data-toggle="modal"><i class="icon-user"></i></a>
+      {% endif %}
+    </div>
+    <div class="logbar-content">
+      {% if user.is_authenticated %}
+      <a href="/logout/" id="u-signout"><i class="icon-signout"></i> Sign Out</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="modal hide fade" tabindex="-1" aria-hidden="true" id="signinModal">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">x</button>
+      <legend>Sign In</legend>
+    </div>
+    <div class="modal-body">
+      <form method="post"   >
+        {% csrf_token %}
+        <fieldset>
+          <img src="{% static 'img/welcome_pig.jpg' %}" id="welcomePig"/>
+          <p><input type="text" class="span3" name="identification" id="email" placeholder="Username or Email"></p>
+          <p><input type="password" class="span3" name="password" placeholder="Password"></p>
+          <p class="checkbox">
+            <label for="id_remember_me"><input type="checkbox" name="remember_me" id="id_remember_me" /> Remember me for a month</label>
+          </p>
+          <p><button type="submit" class="btn btn-primary">Sign in</button>
+            <a  >Forgot Password?</a>
+          </p>
+        </fieldset>
+      </form>
+    </div>
+    <div class="modal-footer">
+      New To MyWebsite.com?
+      <a   class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</div>
+<div class="logo">
+  <div class="ribeye">
+    <div style="color: navajowhite; position: fixed; top: 20%; left: 45%; margin-left: -96.5px; font-size: 480%; font-weight: bolder;">Purdue Network</div>
+    <div style="color: navajowhite; position: fixed; top: 27%; left: 45%; margin-left: -145.5px; font-size: 240%; font-weight: bold">A student centric social network</div>
+  </div>
+</div>
+<div class="circular-show-outer upper-level">
+  <ul class="circular-show-inner upper-level">
+    <li class="show-item" id="courses">
+      <a href="#">
+        <div class="show-img upper" style="background-position: -250px;"></div>
+        <div class="show-caption" style="color: navajowhite; font-weight: bolder; border-color: black">Courses</div>
+      </a>
+    </li>
+    <li class="show-item" id="cuisines">
+      <a href="#">
+        <div class="show-img upper" style="background-position: -550px;"></div>
+        <div class="show-caption" style="font-weight: bolder; border-color: black; color: navajowhite">Tutor System</div>
+      </a>
+    </li>
+    <li class="show-item" id="sources">
+      <a href="#">
+        <div class="show-img upper" style="background-position: -1450px;"></div>
+        <div class="show-caption" style="font-weight: bolder; color: navajowhite; border-color: black">Reset Password</div>
+      </a>
+    </li>
+    <li class="show-item" id="diets">
+      <a href="#">
+        <div class="show-img upper" style="background-position: -850px;"></div>
+        <div class="show-caption" style="border-color: black; color: navajowhite; font-weight: bolder">Rate Process</div>
+      </a>
+    </li>
+    <li class="show-item hot" id="hot">
+      <a  >
+        <div class="show-img upper" style="background-position: -1150px;"></div>
+        <div class="show-caption" style="font-weight: bolder; color: navajowhite;border-color: black">MailBox</div>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="circular-show-outer lower-level">
+  <ul class="circular-show-inner lower-level" data-target="courses">
+    {% for c in Courses %}
+      <li class="show-item" data-target="courses">
+        <a  >
+          <div class="show-img lower courses"></div>
+          <div class="show-caption lower">{{c.name}}</div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="circular-show-inner lower-level" data-target="cuisines">
+    {% for c in Cuisines %}
+      <li class="show-item" data-target="cuisines">
+        <a  >
+          <div class="show-img lower cuisines"></div>
+          <div class="show-caption lower">{{c.name}}</div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="circular-show-inner lower-level" data-target="sources">
+    {% for c in Main_Ingredients %}
+      <li class="show-item" data-target="sources">
+        <a  >
+          <div class="show-img lower sources"></div>
+          <div class="show-caption lower">{{c.name}}</div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="circular-show-inner lower-level" data-target="diets">
+    {% for c in Special_Diets %}
+      <li class="show-item" data-target="diets">
+        <a  >
+          <div class="show-img lower diets"></ndiv>
+          <div class="show-caption lower">{{c.name}}</div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {# circular show nav #}
+  <a class="show-control" href="#courses" id="pItem" style="display:none;"><i class="icon-chevron-left"></i></a>
+  <a class="show-control" href="#courses" id="nItem" style="display:none;"><i class="icon-chevron-right"></i></a>
+  <a class="show-control" href="#cuisines" id="pItem" style="display:none;"><i class="icon-chevron-left"></i></a>
+  <a class="show-control" href="#cuisines" id="nItem" style="display:none;"><i class="icon-chevron-right"></i></a>
+  <a class="show-control" href="#sources" id="pItem" style="display:none;"><i class="icon-chevron-left"></i></a>
+  <a class="show-control" href="#sources" id="nItem" style="display:none;"><i class="icon-chevron-right"></i></a>
+  <a class="show-control" href="#diets" id="pItem" style="display:none;"><i class="icon-chevron-left"></i></a>
+  <a class="show-control" href="#diets" id="nItem" style="display:none;"><i class="icon-chevron-right"></i></a>
+</div>
+
+  <div id="bg-show"></div>
+  <div class="content search-form">
+
+  </div>
+  <div id="search_results"></div>
+  
+{% endblock %}
+
+{% block js-head %}
+
+  <script src="{% static "js/modernizr.custom.17475.js" %}"></script>
+  <script src="{% static "js/bgstretcher.js" %}"></script>
+  <script type="text/javascript">
+
+  var j = jQuery.noConflict();
+  j(document).ready(function(){
+      /*
+    j('#courses').find('a').tooltip({
+      title: 'Browse Recipes by Courses',
+      placement: 'top',
+    });
+    j('#cuisines').find('a').tooltip({
+      title: 'Browse T',
+      placement: 'top',
+    });
+    j('#sources').find('a').tooltip({
+      title: 'Browse Recipes by Main Ingredient',
+      placement: 'top',
+    });
+    j('#diets').find('a').tooltip({
+      title: 'Browse Special Diets Recipe',
+      placement: 'top',
+    });
+    j('#hot').find('a').tooltip({
+      title: 'Browse Our Most Populart Recipes',
+      placement: 'top',
+    });
+*/
+    // initialize slider
+    j('#bg-show').bgStretcher({
+      images: ['/st/Index_Images/bg-img1.jpg', '/st/Index_Images/bg-img2.jpg',
+                '/st/Index_Images/bg-img3.jpg','/st/Index_Images/bg-img4.jpg',
+                '/st/Index_Images/bg-img5.jpg'],
+      imageWidth: 1024, 
+      imageHeight: 768, 
+      slideDirection: 'N',
+      nextSlideDelay: 7000,
+      slideShowSpeed: 3000,
+      slideShow: 'true',
+      transitionEffect: 'fade',
+      sequenceMode: 'normal',
+      buttonPrev: '#prev',
+      buttonNext: '#next',
+      pagination: '#nav',
+      anchoring: 'left center',
+      anchoringImg: 'left center'
+    });
+
+    var delay = (function(){
+      var timer = 0;
+      return function(callback, ms){
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+      };
+    })();
+
+    var minlength = 3;
+    j('#suggestions').hide();
+    j('#searchinput').focusout(function (){
+      j('#suggestions').fadeOut();
+    });
+    j('#searchinput').keyup(function(event) {
+      delay(function(){
+        if(event.which != 13) {
+          var value = j('#searchinput').val(),
+              url = '';
+          if(value.length >= minlength) {
+            var postdata = {'q': value, 'csrfmiddlewaretoken': '{{ csrf_token }}'}
+            j.post(url, postdata,
+              function(data) {
+                j('#suggestions').fadeIn();
+                j('#suggestions').empty().append(data);
+              }
+            );
+          }
+          else {
+            j('#suggestions').fadeOut();
+          }
+        }
+      }, 300);
+    });
+
+    j('#searchinput').keypress(function (event){
+      if (event.which == 13){
+        j('#searchform').submit();
+      }
+    });
+    
+    j('#searchform').submit(function(event) {
+      event.preventDefault();
+      var value = j('#searchinput').val(),
+          url = j(this).attr('action');
+      var postdata = {'q': value, 'csrfmiddlewaretoken': '{{ csrf_token }}'}
+      if(value.length >= minlength) {
+        j.post(url, postdata,
+          function(data) {
+            j('#search_results').fadeIn();
+            j('#search_results').empty().append(data);
+          }
+        );
+      }
+      else {
+        j('#search_results').fadeOut();
+      }
+    });
+
+  });
+</script>
+
+{% endblock js-head%}
+
+{% block js %}
+
+  <script type="text/javascript" src="{% static "js/recipe/index.js" %}"></script>
+
+{% endblock js %}
