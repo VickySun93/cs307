@@ -3,15 +3,11 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import auth
 
-def index(request):
-    return render_to_response('index.html', RequestContext(request) )
-
-
 def login(request):
 
 	if request.method == 'GET':
 		if request.user.is_authenticated() :
-			return render(request, 'index.html') 
+			return render(request, 'index.html')
 		else:
 			return render(request, 'login.html') 
 	else :
