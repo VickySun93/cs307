@@ -10,6 +10,7 @@ from django.contrib.auth.views import password_reset, password_reset_confirm
 #from reviews.models import Review
 from authy.forms import SignUpForm
 from authy.models import Site_User
+from qa.models import UserProfile
 
 def signup(request):
     if request.method == 'POST':
@@ -25,10 +26,11 @@ def signup(request):
             User.objects.create_user(username=username, password=password, email=email)
             
             _user = authenticate(username=username, password=password)
-            Site_User.objects.create(user=_user);
+            Site_User.objects.create(user=_user)
+            UserProfile.objects.create(user=_user)
             login(request, _user)
             messages.add_message(request, messages.SUCCESS, 'Your account were successfully created.')
-            return HttpResponseRedirect("/user_homepage")
+            return HttpResponseRedirect("/")
     else:
         context = RequestContext(request,  {'form': SignUpForm() })
         return render_to_response('auth/signup.html', context)

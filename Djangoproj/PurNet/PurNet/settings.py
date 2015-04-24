@@ -129,8 +129,8 @@ TEMPLATE_DIRS = (
 
 # login settings
 
-LOGIN_URL = '/login/signin'
-LOGOUT_URL = '/login/signout'
+LOGIN_URL = '/'
+LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
 
 if DEBUG:
