@@ -68,7 +68,7 @@ urlpatterns = patterns('',
 
 
 
-    #url(r'^$', views.index, name='index'),
+    url(r'^question/$', views.index, name='index'),
     url(r'^q/(?P<question_id>\d+)/$', views.detail, name='detail'),
     url(r'^answer/(?P<question_id>\d+)/$', views.answer, name='answer'),
     #url(r'^admin/', include(admin.site.urls)),

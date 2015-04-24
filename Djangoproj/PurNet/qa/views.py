@@ -136,7 +136,7 @@ def add(request):
                 t.slug = tag
                 t.save()
                 q.tags.add(t)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect("/question/")
     return HttpResponse(template.render(context))
 
 def comment(request, answer_id):
