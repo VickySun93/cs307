@@ -12,9 +12,17 @@
 {% endblock head_extra %}
 
 {% block content %}
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
   <div class="signup">
     <h1 class="join">Sign up for PUNetwork</h1>
-    <form action="/" method="post">
+    <form action="/signup/" method="POST">
       {% csrf_token %}
       <div class="form-row">
         <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
