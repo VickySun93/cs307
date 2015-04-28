@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Tutor -- PUNetwork{% endblock %}
+
+{% block head_extra %}
+  <link href="{{ STATIC_URL }}css/blog.css" rel="stylesheet" media="screen">
+{% endblock head_extra %}
+
+{% block content %}
+  <h1>Search Result for CS348</h1>
+  <div class="blog">
+    {% for entry in entries %}
+      <article>
+        <h2><a href="/blog/{{ cs180 }}/">{{ entry.title }}</a></h2>
+        <ul>
+          <li>{{ entry.start_publication|date:"D d M Y" }}</li>
+          <li><a href="/{{ entry.created_by.username }}/">{{ entry.created_by.profile.get_screen_name }}</a></li>
+        </ul>
+        <div class="content">
+          {{ entry.format_content|safe }}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+
+<html>
+
+<body>
+<h1>Sang Rhee</h1>
+<p>Descirption: Im a member of USB, I could teach CS 348, CS 252, CS 180. I am a senior in Purdued university and my major is computer science.</p>
+
+<p>Available For: In-person and Online Tutoring</p>
+<p>Subject/Courses: Computer Science</p>
+<p>Price: $15/hour</p>
+</body>
+
+
+</html>
+{% endblock content %}

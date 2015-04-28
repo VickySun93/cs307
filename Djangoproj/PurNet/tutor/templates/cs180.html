@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Tutor -- PUNetwork{% endblock %}
+
+{% block head_extra %}
+  <link href="{{ STATIC_URL }}css/blog.css" rel="stylesheet" media="screen">
+{% endblock head_extra %}
+
+{% block content %}
+  <h1>Search Result for CS180</h1>
+  <div class="blog">
+    {% for entry in entries %}
+      <article>
+        <h2><a href="/blog/{{ cs180 }}/">{{ entry.title }}</a></h2>
+        <ul>
+          <li>{{ entry.start_publication|date:"D d M Y" }}</li>
+          <li><a href="/{{ entry.created_by.username }}/">{{ entry.created_by.profile.get_screen_name }}</a></li>
+        </ul>
+        <div class="content">
+          {{ entry.format_content|safe }}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+
+<html>
+
+<body>
+<h1>Jeremy Meyer</h1>
+<p>Descirption: Im a Senior in Computer Science at Purdue University. 
+I've been tutoring for about two years.</p>
+
+<p>Available For: In-person and Online Tutoring</p>
+<p>Subject/Courses: AP Computer Science Computers and Technology</p>
+<p>Price: $25/hour</p>
+</body>
+
+
+</html>
+{% endblock content %}
