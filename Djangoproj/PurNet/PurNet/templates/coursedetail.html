@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{{course.course_title}}</title>
+ 
+
+<link rel="stylesheet" type="text/css" href="/static/css/main_style.css" title="wsite-theme-css">
+
+<script src="/static/js/jquery-1.10.2.min.js"></script>
+
+</head>
+
+	<body class="short-header-page wsite-background wsite-theme-light  wsite-page-about">
+		<div id="top-wrap"> 
+			<div class="container">
+				<table id="header-right">
+					<tbody>
+						<tr>      
+							<td class="phone-number"></td>
+							<td>
+								<table>
+									<tbody><tr>
+							<td class="social"></td>                            							
+							<td class="search"></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+	</div><!-- end container -->
+</div><!-- end top-wrap --> 
+
+<div id="wrapper">
+   <div id="header-wrap">
+        <div class="container">
+            <table id="header">
+                <tbody><tr>
+                    <td id="logo"><span class="wsite-logo">
+
+ 
+	
+							<span id="wsite-title">{{course.course_title}}</span>
+	
+	
+
+</span></td>
+
+                </tr>
+            </tbody></table>
+        </div><!-- end container -->
+    </div><!-- end header-wrap -->
+
+    <div id="banner-wrap">
+        <div class="container">
+			<h2 class="thin-underline"> {{course.get_course_school_display}}</h2>
+			<h3 class="thin-underline">Major: {{ course.get_course_major_display}}</h3>
+			<h3> Description: </h3>
+			<h4>{{course.course_desc}}</h4>
+
+        </div><!-- end container -->
+		<div class="container">
+			<p></p>
+			</div>
+    </div><!-- end banner-wrap -->
+
+
+
+
+ 
+
+ 
+
+			<div class="bottom-divider"></div>
+        </div><!-- end container -->
+    </div><!-- end footer-wrap -->
+</div>
+
+ 
+ <script type="text/javascript">
+
+
+</script>
+	
+
+</body></html>
