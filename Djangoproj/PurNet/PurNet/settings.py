@@ -47,7 +47,8 @@ INSTALLED_APPS = (
     'reset',
     #'homepage',
     'group_mang',
-    'tutors',
+    'tutor',
+                   #'tutors',#
     #############
     'qa',
     'bootstrap3',

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Tutor -- PUNetwork{% endblock %}
+
+{% block head_extra %}
+  <link href="{{ STATIC_URL }}css/blog.css" rel="stylesheet" media="screen">
+{% endblock head_extra %}
+
+{% block content %}
+  <h1>Find tutor</h1>
+  <div class="blog">
+    {% for entry in entries %}
+      <article>
+        <h2><a href="/blog/{{ cs180 }}/">{{ entry.title }}</a></h2>
+        <ul>
+          <li>{{ entry.start_publication|date:"D d M Y" }}</li>
+          <li><a href="/{{ entry.created_by.username }}/">{{ entry.created_by.profile.get_screen_name }}</a></li>
+        </ul>
+        <div class="content">
+          {{ entry.format_content|safe }}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+  <html>
+
+<body>
+
+<P><a style=" text-decoration: none; color: #444;" href="/cs180" target="_blank">CS 180 </a> </P>
+<P><a style=" text-decoration: none; color: #444;" href="/cs182" target="_blank">CS 182 </a> </P>
+<P><a style=" text-decoration: none; color: #444;" href="/cs240" target="_blank">CS 240 </a> </P>
+<P><a style=" text-decoration: none; color: #444;" href="/cs250" target="_blank">CS 250 </a> </P>
+<P><a style=" text-decoration: none; color: #444;" href="/cs251" target="_blank">CS 251 </a> </P>
+<P><a style=" text-decoration: none; color: #444;" href="/cs252" target="_blank">CS 252 </a> </P>
+<P><a style=" text-decoration: none; color: #444;" href="/cs348" target="_blank">CS 348 </a> </P>
+
+</html>
+{% endblock content %}
