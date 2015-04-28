@@ -36,7 +36,7 @@ jQuery(document).ready(function () {
   resizeDiv();
   jQuery(window).resize(resizeDiv);
 
-
+	/*
   jQuery('ul.upper-level > li:not(.hot)').toggle(
     function (event){
       showEffect(jQuery(this), event);
@@ -47,9 +47,9 @@ jQuery(document).ready(function () {
       return false;
     }
   );
-  
-  jQuery('a#nItem').click(function (event) {slideControl('right' ,jQuery(this), event); return false;});
-  jQuery('a#pItem').click(function (event) {slideControl('left' ,jQuery(this), event); return false;});
+  */
+  //jQuery('a#nItem').click(function (event) {slideControl('right' ,jQuery(this), event); return false;});
+  //jQuery('a#pItem').click(function (event) {slideControl('left' ,jQuery(this), event); return false;});
 
   // login bar
   jQuery('div.logbar').hover(
