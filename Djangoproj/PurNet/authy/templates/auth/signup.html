@@ -12,6 +12,7 @@
 {% endblock head_extra %}
 
 {% block content %}
+  <FONT COLOR="FFFFFF">
   {% if messages %}
     <ul class="messages">
       {% for message in messages %}
@@ -19,9 +20,11 @@
       {% endfor %}
     </ul>
   {% endif %}
+  </FONT>
 
   <div class="signup">
-    <h1 class="join">Sign up for PUNetwork</h1>
+    <h1 class="join">Sign up for PU Network</h1>
+    <FONT COLOR="FFFFFF">
     <form action="/signup/" method="POST">
       {% csrf_token %}
       <div class="form-row">
@@ -47,5 +50,6 @@
       <button type="submit" class="btn btn-success btn-large">Create an account</button>
       <li><a href="/">Return to Login Page</a></li>
     </form>
+    </FONT>
   </div>
 {% endblock content %}

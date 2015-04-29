@@ -27,7 +27,6 @@ def signup(request):
             _user = authenticate(username=username, password=password)
             Site_User.objects.create(user=_user)
             UserProfile.objects.create(user=_user)
-            login(request,_user)
             messages.add_message(request, messages.SUCCESS, 'Your account was successfully created.')
             return HttpResponseRedirect("/signup")
     else:
