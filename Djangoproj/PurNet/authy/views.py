@@ -16,7 +16,7 @@ def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if not form.is_valid():
-            messages.add_message(request, messages.ERROR, 'There was some problems while creating your account. Please review some fields before submiting again.')
+            messages.add_message(request, messages.ERROR, 'There were some problems while creating your account. Please review some fields before submiting again.')
             context = RequestContext(request, {'form': form})
             return render_to_response('auth/signup.html', context)
         else:
@@ -24,13 +24,11 @@ def signup(request):
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
             User.objects.create_user(username=username, password=password, email=email)
-            
             _user = authenticate(username=username, password=password)
             Site_User.objects.create(user=_user)
             UserProfile.objects.create(user=_user)
-            login(request, _user)
-            messages.add_message(request, messages.SUCCESS, 'Your account were successfully created.')
-            return HttpResponseRedirect("/")
+            messages.add_message(request, messages.SUCCESS, 'Your account was successfully created.')
+            return HttpResponseRedirect("/signup")
     else:
         context = RequestContext(request,  {'form': SignUpForm() })
         return render_to_response('auth/signup.html', context)

@@ -48,8 +48,6 @@ INSTALLED_APPS = (
     #'homepage',
     'group_mang',
     'tutor',
-                   #'tutors',#
-    #############
     'qa',
     'bootstrap3',
     'django_markdown',
