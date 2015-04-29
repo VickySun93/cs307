@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title> Add course</title>
+ 
+
+<link rel="stylesheet" type="text/css" href="/static/css/main_style.css" title="wsite-theme-css">
+
+<script src="/static/js/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+
+</head>
+
+	<body class="short-header-page wsite-background wsite-theme-light  wsite-page-about">
+		<div id="top-wrap"> 
+			<div class="container">
+				<table id="header-right">
+					<tbody>
+						<tr>      
+							<td class="phone-number"></td>
+							<td>
+								<table>
+									<tbody><tr>
+							<td class="social"></td>                            							
+							<td class="search"></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+	</div><!-- end container -->
+</div><!-- end top-wrap --> 
+
+<div id="wrapper">
+   <div id="header-wrap">
+        <div class="">
+            <table id="header">
+                <tbody><tr>
+                    <td id="logo"><span class="wsite-logo">
+
+ 
+	
+						<span id="wsite-title">Add course</span>
+	
+	
+
+</span></td>
+
+                </tr>
+            </tbody></table>
+        </div><!-- end container -->
+    </div><!-- end header-wrap -->
+
+    <div id="banner-wrap">
+        <div class="container">
+
+
+ 
+				<form action='/course_add/' method='POST' class="form-horizontal">
+					<div class="dialogModal_content">
+						<div class="control-group required">
+							<label for="school" class="control-label">School</label>
+							<div class="controls">
+								<select name="school" id="school_field" >
+										{% for a in schooles%}
+										<option value="{{a.0}}">{{a.1}}</option> 
+										{% endfor %}
+				 
+								</select>
+								<!-- <span class="add-on"><i class="icon-plus party_group"></i></span> -->
+							</div>
+						</div>
+						<div class="control-group required">
+							<label for="major" class="control-label">Major</label>
+							<div class="controls">
+								<select  name="major" id="major" >
+										{% for a in majors%}
+										<option value="{{a.0}}">{{a.1}}</option> 
+										{% endfor %}
+ 
+								</select>
+								<!-- <span class="add-on"><i class="icon-plus party_group" ></i></span> -->
+							</div>
+						</div>
+
+						<div class="control-group required">
+							<label for="title" class="control-label">Title</label>
+							<div class="controls">
+								<input required="required" type="text"  name="title" id="title">
+							</div>
+						</div>
+
+
+						<div class="control-group required">
+							<label for="number" class="control-label">Number</label>
+							<div class="controls">
+								<input required="required" type="text"  name="number" id="number">
+							</div>
+						</div>
+
+						<div class="control-group required">
+							<label for="crn" class="control-label">CRN</label>
+							<div class="controls">
+								<input required="required" type="text"  name="crn" id="crn">
+							</div>
+						</div>
+
+
+						<div class="control-group required"> 
+							<label for="desc" class="control-label">Desc</label>
+							<div class="controls">
+								<textarea required="required" title="desc" rows="10" name="desc" maxlength="1000" id="desc" cols="40"></textarea>
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-default" >Add</button>
+					</div>
+				</form>
+
+
+        </div><!-- end container -->
+		<div class="container">
+			<p></p>
+			</div>
+    </div><!-- end banner-wrap -->
+
+
+
+
+ 
+
+ 
+
+			<div class="bottom-divider"></div>
+        </div><!-- end container -->
+    </div><!-- end footer-wrap -->
+</div>
+
+ 
+ <script type="text/javascript">
+
+
+</script>
+	
+
+</body></html>
