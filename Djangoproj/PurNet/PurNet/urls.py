@@ -7,6 +7,7 @@ from django.conf.urls import url, include
 from django.contrib.auth.models import User
 from qa.models import Question, Tag
 from rest_framework import routers, serializers, viewsets
+import course_mang
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -64,7 +65,10 @@ urlpatterns = patterns('',
     url(r'^$', 'PurNet.views.login', name='login'),
     url(r'^logout/', 'PurNet.views.logout', name='logout'),
     #url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^courses/', 'course_mang.views.list', name='courses_list'),
 
+    url(r'^coursedetail/', 'course_mang.views.detail', name='courses_detail'),
 
 
 

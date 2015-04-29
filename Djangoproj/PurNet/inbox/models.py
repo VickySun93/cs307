@@ -8,5 +8,5 @@ class Message(models.Model):
     isDeleted = models.BooleanField(default=False, verbose_name='deleted')
 
     class Meta:
-        verbose_name = 'Mensaje'
-        verbose_name_plural = 'Mensajes'
+        verbose_name = 'Message'
+        verbose_name_plural = 'Messages'

@@ -48,8 +48,6 @@ INSTALLED_APPS = (
     #'homepage',
     'group_mang',
     'tutor',
-                   #'tutors',#
-    #############
     'qa',
     'bootstrap3',
     'django_markdown',
@@ -59,7 +57,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
