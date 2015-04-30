@@ -19,7 +19,7 @@
         {% if user.is_authenticated %}
           <nav class="signedin">
             <a href="/{{ user.username }}/" class="user">{{ user.username }}</a>
-            <a href="/signout/">Log Out</a>
+            <a href="/logout/">Log Out</a>
           </nav>
         {% else %}
           <div class="signin">
