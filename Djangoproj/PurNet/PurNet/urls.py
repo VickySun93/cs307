@@ -90,9 +90,21 @@ urlpatterns = patterns('',
     #url(r'^logout/$', views.user_logout, name='logout'),
 
     url('^markdown/', include( 'django_markdown.urls')),
-
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^signup/$', 'authy.views.signup', name='signup'),
+    url(r'^signin/$', 'authy.views.signin', name='signin'),
+    url(r'^signout/$', 'authy.views.signout', name='signout'),
+    url(r'^reset/$', 'auth.views.reset', name='reset'),
+    #url(r'^settings/', include('settings.urls', namespace='settings')),
+    url(r'^tutor/', include('tutor.urls', namespace='tutor')),
+    url(r'^cs180/', 'tutor.views.cs180',name='cs180'),
+    url(r'^cs182/', 'tutor.views.cs182',name='cs182'),
+    url(r'^cs240/', 'tutor.views.cs240',name='cs240'),
+    url(r'^cs250/', 'tutor.views.cs250',name='cs250'),
+    url(r'^cs251/', 'tutor.views.cs251',name='cs251'),
+    url(r'^cs252/', 'tutor.views.cs252',name='cs252'),
+    url(r'^cs348/', 'tutor.views.cs348',name='cs348'),
 
                        
 )
