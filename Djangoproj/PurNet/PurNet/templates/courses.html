@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title> Course List</title>
  
 
@@ -9,117 +11,110 @@
 <link rel="stylesheet" type="text/css" href="/static/css/jquery.dataTables.min.css">
 <script src="/static/js/jquery.dataTables.min.js"></script>
 </head>
-
-	<body class="short-header-page wsite-background wsite-theme-light  wsite-page-about">
-		<div id="top-wrap"> 
-			<div class="container">
-				<table id="header-right">
-					<tbody>
-						<tr>      
-							<td class="phone-number"></td>
-							<td>
-								<table>
-									<tbody><tr>
-							<td class="social"></td>                            							
-							<td class="search"></td>
-						</tr>
-					</tbody></table>
-				</td>
-			</tr>
-		</tbody></table>
-	</div><!-- end container -->
-</div><!-- end top-wrap --> 
-
-<div id="wrapper">
-   <div id="header-wrap">
-        <div class="container">
-            <table id="header">
-                <tbody><tr>
-                    <td id="logo"><span class="wsite-logo">
-
- 
-	
-	<span id="wsite-title">Course List</span>
-	
-	
-
-</span></td>
-
-                </tr>
-            </tbody></table>
-        </div><!-- end container -->
-    </div><!-- end header-wrap -->
-
-    <div id="banner-wrap">
-        <div class="container">
-        	<table id="example" class="display" cellspacing="0" width="100%"> 
-        		<thead>
-        			<tr> <th>Course Title </th> <th>Major</th> <th>School</th> <th>Number</th> <th>CRN</th> </tr>
-				</thead>
+<body class="short-header-page wsite-background wsite-theme-light  wsite-page-about">
+	<div id="top-wrap"> 
+		<div class="container">
+			<table id="header-right">
 				<tbody>
-        			{% for a in allcourses %}
-					<tr><td><a href='/coursedetail/?id={{a.id}}'>{{a.course_title }}</a></td ><td>{{a.course_major }}</td >
-        			 	<td>{{ a.course_school }}</td ><td>{{a.course_number }}</td >
-						<td>{{ a.course_CRN }}</td ></tr>
-        			{% endfor %}
-				</tbody>
-					<tfoot>
-        			<tr> <th>Course Title </th> <th>Major</th> <th>School</th> <th>Number</th> <th>CRN</th> </tr>
-					</tfoot>
-        	</table>
+					<tr>      
+						<td class="phone-number"></td>
+						<td>
+							<table>
+							<tbody>
+								<tr>
+									<td class="social"></td>                            							
+									<td class="search"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody></table>
+		</div><!-- end container -->
+	</div><!-- end top-wrap --> 
+	<div id="wrapper">
+		<div id="header-wrap">
+			<div class="container">
+				<table id="header">
+					<tbody>
+						<tr>
+          		<td id="logo">
+          			<span class="wsite-logo">
+          				<span id="wsite-title">Course List</span>
+          			</span>
+         		 	</td>
+          	</tr>
+      		</tbody>
+    		</table>
+  		</div><!-- end container -->
+		</div><!-- end header-wrap -->
+
+		<div id="banner-wrap">
+      <div class="container">
+      	<table id="example" class="display" cellspacing="0" width="100%"> 
+      		<thead>
+      			<tr> <th>Course Title </th> <th>Major</th> <th>School</th> <th>Number</th> <th>CRN</th> </tr>
+        	</thead>
+        	<tbody>
+        		{% for a in allcourses %}
+        		<tr>
+        			<td><a href='/coursedetail/?id={{a.id}}'>{{a.course_title }}</a></td ><td>{{a.course_major }}</td >
+        			<td>{{ a.course_school }}</td ><td>{{a.course_number }}</td ><td>{{ a.course_CRN }}</td >
+        		</tr>
+        		{% endfor %}
+        	</tbody>
+        	<tfoot>
+        		<tr>
+        			<th>Course Title </th> <th>Major</th> <th>School</th> <th>Number</th> <th>CRN</th>
+        		</tr>
+        	</tfoot>
+				</table>
 
 <!--<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />-->
 
 
 <style>
 .btn {
-	    -moz-border-bottom-colors: none;
-			    -moz-border-left-colors: none;
-					    -moz-border-right-colors: none;
-							    -moz-border-top-colors: none;
-									    background-color: #f5f5f5;
-											    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-													    background-repeat: repeat-x;
-															    border-color: #bbbbbb #bbbbbb #a2a2a2;
-																	    border-image: none;
-																			    border-radius: 4px;
-																					    border-style: solid;
-																							    border-width: 1px;
-																									    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-																											    color: #333333;
-																													    cursor: pointer;
-																															    display: inline-block;
-																																	    font-size: 14px;
-																																			    line-height: 20px;
-																																					    margin-bottom: 0;
-																																							    padding: 4px 12px;
-																																									    text-align: center;
-																																											    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-																																													    vertical-align: middle;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: #f5f5f5;
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: #bbbbbb #bbbbbb #a2a2a2;
+	border-image: none;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	color: #333333;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 0;
+	padding: 4px 12px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
 }
 .btn-success {
-	    background-color: #5bb75b;
-			    background-image: linear-gradient(to bottom, #62c462, #51a351);
-					    background-repeat: repeat-x;
-							    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-									    color: #ffffff;
-											    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #5bb75b;
+	background-image: linear-gradient(to bottom, #62c462, #51a351);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 </style>
-			<a class="btn btn-success" href="/course_add/" >Add</a>
-        </div><!-- end container -->
-    </div><!-- end banner-wrap -->
+	<a class="btn btn-success" href="/course_add/" >Add</a>
+</div><!-- end container -->
+</div><!-- end banner-wrap -->
 
-
-
-
- 
-
- 
-
-			<div class="bottom-divider"></div>
-        </div><!-- end container -->
-    </div><!-- end footer-wrap -->
+<div class="bottom-divider"></div>
+</div><!-- end container -->
+</div><!-- end footer-wrap -->
 </div>
 
  

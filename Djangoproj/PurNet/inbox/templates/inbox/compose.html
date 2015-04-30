@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}PUNetwork - Send a Message{% endblock title %}
+
+{% block content %}
+  <FONT COLOR="FFFFFF">
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </FONT>
+
+  <div class="s">
+    <h1 class="join">Write your message to send to someone</h1>
+    <FONT COLOR="FFFFFF">
+    <form action="/inbox/compose/" method="POST">
+      {% csrf_token %}
+      <div class="form-row">
+        <label for="{{ form.recipient.id_for_label }}">{{ form.recipient.label }}</label>
+        {{ form.recipient }}
+        {{ form.recipient.errors }}
+      </div>
+      <div class="form-row">
+        <label for="{{ form.subject.id_for_label }}">{{ form.subject.label }}</label>
+        {{ form.subject }}
+        {{ form.subject.errors }}
+      </div>
+      <div class="form-row">
+        <label for="{{ form.content.id_for_label }}">{{ form.content.label }}</label>
+        {{ form.content }}
+        {{ form.content.errors }}
+      </div>
+      <button type="submit" class="btn btn-success btn-large">Send!</button>
+    </form>
+    <a href="/inbox/">Return to the Inbox</a>
+    </FONT>
+  </div>
+{% endblock content %}

@@ -30,6 +30,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='message',
             name='sender',
-            field=models.ForeignKey(related_name='sendedMessages', verbose_name=b'from', to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(related_name='sentMessages', verbose_name=b'from', to=settings.AUTH_USER_MODEL),
         ),
     ]

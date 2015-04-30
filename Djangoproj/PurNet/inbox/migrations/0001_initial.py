@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('content', models.CharField(max_length=100, verbose_name=b'mensaje')),
                 ('recipient', models.ForeignKey(related_name='inboxMessages', verbose_name=b'para', to=settings.AUTH_USER_MODEL)),
-                ('sender', models.ForeignKey(related_name='sendedMessages', verbose_name=b'de', to=settings.AUTH_USER_MODEL)),
+                ('sender', models.ForeignKey(related_name='sentMessages', verbose_name=b'de', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'Mensaje',
