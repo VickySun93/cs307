@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title> Group List</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/main_style.css" title="wsite-theme-css">
+		<script src="/static/js/jquery-1.10.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/css/jquery.dataTables.min.css">
+		<script src="/static/js/jquery.dataTables.min.js"></script>
+	</head>
+
+	<body class="short-header-page wsite-background wsite-theme-light  wsite-page-about">
+		<div id="top-wrap"> 
+			<div class="container">
+				<table id="header-right">
+					<tbody>
+						<tr>      
+							<td class="phone-number"></td>
+							<td>
+								<table>
+									<tbody>
+										<tr>
+											<td class="social"></td>		
+											<td class="search"></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!-- end container -->
+		</div><!-- end top-wrap --> 
+
+		<div id="wrapper">
+			<div id="header-wrap">
+				<div class="container">
+					<table id="header">
+						<tbody>
+							<tr>
+								<td id="logo">
+									<span class="wsite-logo">
+										<span id="wsite-title">Group List</span>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- end container -->
+			</div><!-- end header-wrap -->
+
+			<div id="banner-wrap">
+				<div class="container">
+					<table id="example" class="display" cellspacing="0" width="100%"> 
+						<thead>
+							<tr>
+								<th>Group Title </th>
+								<th>Description</th>
+								<th>Admins</th>
+								<th>Member</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for group in allgroups %}
+								<tr>
+									<td><a href='/groupdetail/{{group.id}}'>{{group.group_title }}</a></td >
+									<td>{{group.group_desc }}</td >
+									<td>
+										{% for admin in group.group_admins.admin_members.all %}
+											{{admin.user.username}}{% if not forloop.last %}, {% endif %}
+										{% endfor %}
+									</td >
+									<td>
+										{% for member in group.group_members.all %}
+											{{member.user.username}}{% if not forloop.last %}, {% endif %}
+										{% endfor %}
+									</td >
+								</tr>
+							{% endfor %}
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Group Title </th>
+								<th>Description</th>
+								<th>Admins</th>
+								<th>Members</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- end container -->
+			</div><!-- end banner-wrap -->
+			<div class="bottom-divider"></div>
+		</div><!-- end container -->
+
+ 
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#example').DataTable();
+			});
+		</script>
+	</body>
+</html>
