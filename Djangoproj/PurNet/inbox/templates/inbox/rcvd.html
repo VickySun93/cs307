@@ -62,7 +62,7 @@
           <tbody>
           {% for a in message.all %}
             <tr>
-              <td><a href='msg/?id={{a.id}}'>{{ a.subject }}</a></td ><td>{{ a.sender }}</td >
+              <td><a href='/msg/{{a.id}}'>{{ a.subject }}</a></td ><td>{{ a.sender }}</td >
             </tr>
           {% endfor %}
           </tbody>

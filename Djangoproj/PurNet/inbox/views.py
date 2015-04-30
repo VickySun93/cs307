@@ -23,7 +23,8 @@ def inbox(request):
 
 @login_required
 def sent_msg_view(request, id):
-    return TemplateResponse(request, 'inbox/msg_view.html', {'message': request.user.sentMessages.filter(id=id)})
+    return render_to_response('inbox/msg_view.html', {'message':request.user.sentMessages.filter(id=id)})
+    #return TemplateResponse(request, 'inbox/msg_view.html', {'message': request.user.sentMessages.filter(id=id)})
 
 @login_required
 def msg_view(request, id):
