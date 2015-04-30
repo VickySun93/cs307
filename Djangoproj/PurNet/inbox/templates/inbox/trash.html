@@ -42,7 +42,7 @@
             <tr>
               <td id="logo">
                 <span class="wsite-logo">
-                  <span id="wsite-title">Inbox Messages</span>
+                  <span id="wsite-title">Deleted Messages</span>
                 </span>
               </td>
             </tr>
@@ -62,7 +62,7 @@
           <tbody>
           {% for a in message.all %}
             <tr>
-              <td><a href='msg/?id={{a.id}}'>{{ a.subject }}</a></td ><td>{{ a.sender }}</td >
+              <td><a href='?id={{a.id}}'>{{ a.subject }}</a></td ><td>{{ a.sender }}</td >
             </tr>
           {% endfor %}
           </tbody>
