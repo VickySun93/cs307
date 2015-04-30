@@ -6,9 +6,9 @@ urlpatterns =[
     url(r'^trash/', 'inbox.views.trash', name="trash"),
     url(r'^compose/$', 'inbox.views.compose', name="compose"),
     url(r'^inbox/$', 'inbox.views.rcvd', name="inbox"),
-    url(r'^sent/?id=([0-9]+)/$' , 'inbox.views.msg_view', name="view_msg"),
-    url(r'^trash/?id=([0-9]+)/$' , 'inbox.views.msg_view', name="view_msg"),
-    url(r'^inbox/?id=([0-9]+)/$' , 'inbox.views.msg_view', name="view_msg"),
+    url(r'^sent/([0-9]+)/$' , 'inbox.views.sent_msg_view', name="view_sent_msg"),
+    url(r'^trash/([0-9]+)/$' , 'inbox.views.msg_view', name="view_trash_msg"),
+    url(r'^inbox/([0-9]+)/$' , 'inbox.views.msg_view', name="view_trash_msg"),
 
 
 ]

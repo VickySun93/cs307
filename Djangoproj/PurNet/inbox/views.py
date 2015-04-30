@@ -22,6 +22,14 @@ def inbox(request):
     return TemplateResponse(request, 'inbox/inbox.html')
 
 @login_required
+def sent_msg_view(request, id):
+    return TemplateResponse(request, 'inbox/msg_view.html', {'message': request.user.sentMessages.filter(id=id)})
+
+@login_required
+def msg_view(request, id):
+    return TemplateResponse(request, 'inbox/msg_view.html', {'message': request.user.inboxMessages.filter(id=id)})
+
+@login_required
 def trash(request):
     return TemplateResponse(request, 'inbox/trash.html', {'message': request.user.inboxMessages.exclude(isDeleted=False)})
 
