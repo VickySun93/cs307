@@ -15,7 +15,7 @@ def rcvd(request):
 
 @login_required
 def sent(request):
-    return TemplateResponse(request, 'inbox/msg_view.html', {'message': request.user.sentMessages})
+    return TemplateResponse(request, 'inbox/sent.html', {'message': request.user.sentMessages})
 
 @login_required
 def inbox(request):

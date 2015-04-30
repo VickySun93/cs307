@@ -42,7 +42,7 @@
             <tr>
               <td id="logo">
                 <span class="wsite-logo">
-                  <span id="wsite-title">Inbox Messages</span>
+                  <span id="wsite-title">Sent Messages</span>
                 </span>
               </td>
             </tr>
@@ -56,19 +56,19 @@
         <table id="example" class="display" cellspacing="0" width="100%"> 
           <thead>
             <tr>
-              <th>Subject:</th> <th>From:</th>
+              <th>Subject:</th> <th>To:</th>
             </tr>
           </thead>
           <tbody>
           {% for a in message.all %}
             <tr>
-              <td><a href='msg/?id={{a.id}}'>{{ a.subject }}</a></td ><td>{{ a.sender }}</td >
+              <td><a href='?id={{a.id}}'>{{ a.subject }}</a></td ><td>{{ a.recipient }}</td >
             </tr>
           {% endfor %}
           </tbody>
             <tfoot>
               <tr>
-                <th>Subject:</th> <th>From:</th>
+                <th>Subject:</th> <th>To:</th>
               </tr>
             </tfoot>
         </table>
