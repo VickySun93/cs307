@@ -64,18 +64,12 @@ urlpatterns = patterns('',
     #url(r'^user_homepage/', include('user_homepage.urls')),
     url(r'^$', 'PurNet.views.login', name='login'),
     url(r'^logout/', 'PurNet.views.logout', name='logout'),
-    #url(r'^admin/', include(admin.site.urls)),
-    
     url(r'^courses/', 'course_mang.views.list', name='courses_list'),
     url(r'^course_add/', 'course_mang.views.add', name='courses_add'),
     url(r'^coursedetail/', 'course_mang.views.detail', name='courses_detail'),
-
-    
-
     url(r'^question/$', views.index, name='index'),
     url(r'^q/(?P<question_id>\d+)/$', views.detail, name='detail'),
     url(r'^answer/(?P<question_id>\d+)/$', views.answer, name='answer'),
-    #url(r'^admin/', include(admin.site.urls)),
     url(r'^add/$', views.add, name='add'),
     url(r'^answer/$', views.add_answer, name='add_answer'),
     url(r'^vote/(?P<user_id>\d+)/(?P<answer_id>\d+)/(?P<question_id>\d+)/(?P<op_code>\d+)/$', views.vote, name='vote'),
@@ -83,17 +77,11 @@ urlpatterns = patterns('',
     url(r'^search/$', views.search, name='search'),
     url(r'^tag/(?P<tag>\w+)/$', views.tag, name='tag'),
     url(r'^thumb/(?P<user_id>\d+)/(?P<question_id>\d+)/(?P<op_code>\d+)/$', views.thumb, name='thumb'),
-
     url(r'^profile/(?P<user_id>\d+)/$', views.profile, name='profile'),
-    #url(r'^register/$', views.register, name='register'),
-    #url(r'^login/$', views.user_login, name='login'),
-    #url(r'^logout/$', views.user_logout, name='logout'),
-
     url('^markdown/', include( 'django_markdown.urls')),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^signup/$', 'authy.views.signup', name='signup'),
-    #url(r'^settings/', include('settings.urls', namespace='settings')),
     url(r'^tutor/', include('tutor.urls', namespace='tutor')),
     url(r'^cs180/', 'tutor.views.cs180',name='cs180'),
     url(r'^cs182/', 'tutor.views.cs182',name='cs182'),
@@ -102,6 +90,5 @@ urlpatterns = patterns('',
     url(r'^cs251/', 'tutor.views.cs251',name='cs251'),
     url(r'^cs252/', 'tutor.views.cs252',name='cs252'),
     url(r'^cs348/', 'tutor.views.cs348',name='cs348'),
-
-                       
+                    
 )
