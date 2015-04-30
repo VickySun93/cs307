@@ -67,10 +67,10 @@ urlpatterns = patterns('',
     #url(r'^admin/', include(admin.site.urls)),
     
     url(r'^courses/', 'course_mang.views.list', name='courses_list'),
-
+    url(r'^course_add/', 'course_mang.views.add', name='courses_add'),
     url(r'^coursedetail/', 'course_mang.views.detail', name='courses_detail'),
 
-
+    
 
     url(r'^question/$', views.index, name='index'),
     url(r'^q/(?P<question_id>\d+)/$', views.detail, name='detail'),
